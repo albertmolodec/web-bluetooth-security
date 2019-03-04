@@ -1,7 +1,7 @@
 {
-  "name": "web-lightbulb",
+  "name": "web-bluetooth-security",
   "version": "1.0.0",
-  "description": "Smart Light Bulb Web App",
+  "description": "Web Bluetooth Security",
   "main": "index.js",
   "scripts": {
     "start": "live-server web",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/urish/web-lightbulb.git"
+    "url": "git+https://github.com/albertmolodec/web-bluetooth-security.git"
   },
   "keywords": [
     "lighting",
@@ -18,12 +18,12 @@
     "iot",
     "bluetooth"
   ],
-  "author": "Uri Shaked",
+  "author": "Albert Abdulmanov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/urish/web-lightbulb/issues"
+    "url": "https://github.com/albertmolodec/web-bluetooth-security/issues"
   },
-  "homepage": "https://github.com/urish/web-lightbulb#readme",
+  "homepage": "https://github.com/albertmolodec/web-bluetooth-security#readme",
   "devDependencies": {
     "gh-pages": "^0.11.0",
     "live-server": "^1.2.1",
