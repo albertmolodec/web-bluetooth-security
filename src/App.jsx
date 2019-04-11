@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import MainPage from './pages/main';
+import Bulb from './components/Bulb';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         </span>
       </header>
       <main>
-        <MainPage />
+        <Bulb />
       </main>
       <footer>Альберт Абдульманов, 2019</footer>
     </div>

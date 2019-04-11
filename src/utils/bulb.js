@@ -1,95 +1,63 @@
 let ledCharacteristic = null;
-let poweredOn = false;
-
-function onConnected() {
-  document.querySelector('.connect-button').classList.add('hidden');
-  document.querySelector('.color-buttons').classList.remove('hidden');
-  document.querySelector('.mic-button').classList.remove('hidden');
-  document.querySelector('.power-button').classList.remove('hidden');
-  poweredOn = true;
-}
-
-function onDisconnected() {
-  document.querySelector('.connect-button').classList.remove('hidden');
-  document.querySelector('.color-buttons').classList.add('hidden');
-  document.querySelector('.mic-button').classList.add('hidden');
-  document.querySelector('.power-button').classList.add('hidden');
-}
 
 export function connect(setConnected) {
-  console.log('Requesting Bluetooth Device...');
+  console.log('Запрос к Bluetooth-устройству...');
   navigator.bluetooth
     .requestDevice({
       acceptAllDevices: true,
       optionalServices: [0xff0d],
     })
     .then(device => {
-      console.log('> Found ' + device.name);
-      console.log('Connecting to GATT Server...');
+      console.log('> Найдено устройство ' + device.name);
+      console.log('Подключение к GATT серверу...');
       device.addEventListener('gattserverdisconnected', setConnected(false));
       return device.gatt.connect();
     })
     .then(server => {
-      console.log('Getting Service 0xff0d - Light control...');
+      console.log('Получение сервиса 0xff0d - Light control...');
       return server.getPrimaryService(0xff0d);
     })
-    // Просто цвет
-    // .then(service => {
-    //     console.log('Getting Characteristic 0xfffc - Light control...');
-    //     return service.getCharacteristic(0xfffc);
-    // })
     .then(service => {
-      console.log('Getting Characteristic 0xfffc - Light control...');
+      console.log('Получение характеристики 0xfffc - Light control...');
       return service.getCharacteristic(0xfffb);
     })
     .then(characteristic => {
-      console.log('All ready!');
+      console.log('Успех!');
       ledCharacteristic = characteristic;
       setConnected(true);
     })
     .catch(error => {
-      console.log('Argh! ' + error);
+      console.log('Ошибка подключения. ' + error);
       setConnected(false);
     });
 }
 
-function powerOn() {
+function powerOn(setPower) {
   let data = new Uint8Array([0xcc, 0x23, 0x33]);
   return ledCharacteristic
     .writeValue(data)
-    .catch(err => console.log('Error when powering on! ', err))
+    .catch(err => console.log('Ошибка включения. ', err))
     .then(() => {
-      poweredOn = true;
-      toggleButtons();
+      setPower(true);
     });
 }
 
-function powerOff() {
+function powerOff(setPower) {
   let data = new Uint8Array([0xcc, 0x24, 0x33]);
   return ledCharacteristic
     .writeValue(data)
-    .catch(err => console.log('Error when switching off! ', err))
+    .catch(err => console.log('Ошибка выключения. ', err))
     .then(() => {
-      poweredOn = false;
-      toggleButtons();
+      setPower(false);
     });
 }
 
-function togglePower() {
-  if (poweredOn) {
-    powerOff();
+export function togglePower(power, setPower) {
+  if (power) {
+    powerOff(setPower);
   } else {
-    powerOn();
+    powerOn(setPower);
   }
-}
-
-function toggleButtons() {
-  Array.from(document.querySelectorAll('.color-buttons button')).forEach(
-    function(colorButton) {
-      colorButton.disabled = !poweredOn;
-    },
-  );
-  document.querySelector('.mic-button button').disabled = !poweredOn;
 }
 
 // 0xfffc
@@ -131,7 +99,7 @@ function rainbow() {
   );
 }
 
-function red() {
+export function red() {
   return setColor(255, 0, 0).then(() => console.log('Color set to Red'));
 }
 
