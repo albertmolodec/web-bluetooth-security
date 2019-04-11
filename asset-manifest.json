@@ -1,13 +1,13 @@
 {
-  "main.css": "/static/css/main.3fd8be4d.chunk.css",
-  "main.js": "/static/js/main.de6f86e3.chunk.js",
-  "main.js.map": "/static/js/main.de6f86e3.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.c42eaf27.chunk.js": "/static/js/2.c42eaf27.chunk.js",
-  "static/js/2.c42eaf27.chunk.js.map": "/static/js/2.c42eaf27.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.f243901826d0ed7318c531989d93db9a.js": "/precache-manifest.f243901826d0ed7318c531989d93db9a.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.3fd8be4d.chunk.css.map": "/static/css/main.3fd8be4d.chunk.css.map"
+  "main.css": "/web-bluetooth-security/static/css/main.3fd8be4d.chunk.css",
+  "main.js": "/web-bluetooth-security/static/js/main.65f358b7.chunk.js",
+  "main.js.map": "/web-bluetooth-security/static/js/main.65f358b7.chunk.js.map",
+  "runtime~main.js": "/web-bluetooth-security/static/js/runtime~main.0a9cf63d.js",
+  "runtime~main.js.map": "/web-bluetooth-security/static/js/runtime~main.0a9cf63d.js.map",
+  "static/js/2.72052979.chunk.js": "/web-bluetooth-security/static/js/2.72052979.chunk.js",
+  "static/js/2.72052979.chunk.js.map": "/web-bluetooth-security/static/js/2.72052979.chunk.js.map",
+  "index.html": "/web-bluetooth-security/index.html",
+  "precache-manifest.e9be3837a1c7165cf5081ea486afb320.js": "/web-bluetooth-security/precache-manifest.e9be3837a1c7165cf5081ea486afb320.js",
+  "service-worker.js": "/web-bluetooth-security/service-worker.js",
+  "static/css/main.3fd8be4d.chunk.css.map": "/web-bluetooth-security/static/css/main.3fd8be4d.chunk.css.map"
 }
