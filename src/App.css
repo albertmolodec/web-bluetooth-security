@@ -1,0 +1,22 @@
+.app {
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  background-color: aliceblue;
+
+  color: navy;
+  font-size: 16px;
+}
+
+header,
+footer,
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  
+}
