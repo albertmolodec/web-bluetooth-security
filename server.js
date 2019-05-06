@@ -11,4 +11,7 @@ rect(2, 73, (err, rectangle) => {
     console.log('Площадь = ' + rectangle.area());
     console.log('Периметр = ' + rectangle.perimeter());
   }
+
+  console.log(http);
+  console.log(path);
 });
