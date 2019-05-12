@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Index() {
+function App() {
   return <h1>Hello world</h1>;
 }
 
-export default Index;
+export default App;
