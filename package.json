@@ -8,9 +8,8 @@
   "homepage": "http://albertmolodec.github.io/web-bluetooth-security",
   "author": "Albert Abdulmanov",
   "scripts": {
-    "dev": "parcel ./client/index.html",
-    "build": "parcel build ./client/index.html",
-    "server": "node ./server/index.js"
+    "start": "parcel ./client/index.html",
+    "build": "parcel build ./client/index.html"
   },
   "dependencies": {
     "react": "^16.8.6",

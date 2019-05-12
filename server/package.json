@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "prod": "cross-env NODE_ENV=production pm2 start ./index.js"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -29,6 +32,7 @@
     "nanoid": "^2.0.1",
     "passport": "^0.4.0",
     "passport-http-bearer": "^1.0.1",
-    "passport-jwt": "^4.0.0"
+    "passport-jwt": "^4.0.0",
+    "winston": "^3.2.1"
   }
 }
