@@ -11,7 +11,12 @@
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^1.19.0",
-    "pm2": "^3.5.0"
+    "pm2": "^3.5.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.4"
   },
   "dependencies": {
     "@hapi/joi": "^15.0.2",
@@ -33,6 +38,9 @@
     "passport": "^0.4.0",
     "passport-http-bearer": "^1.0.1",
     "passport-jwt": "^4.0.0",
+    "bluebird": "^3.5.4",
+    "moment-timezone": "^0.5.25",
+    "lodash": "^4.17.11",
     "winston": "^3.2.1"
   }
 }

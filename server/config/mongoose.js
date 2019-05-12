@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 const logger = require('./logger');
 const { mongo, env } = require('./vars');
 
+// Убрать
+mongoose.Promise = Promise;
+
 // Exit application on error
 mongoose.connection.on('error', err => {
   logger.error(`MongoDB connection error: ${err}`);

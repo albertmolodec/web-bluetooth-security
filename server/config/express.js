@@ -5,9 +5,9 @@ const compress = require('compression');
 const cors = require('cors');
 const helmet = require('helmet');
 const passport = require('passport');
-const { logs } = require('./vars');
-// const routes = require('../api/routes/');
 // const strategies = require('./passport');
+const { logs } = require('./vars');
+const routes = require('../api/routes/');
 // const error = require('../api/middlewares/error');
 
 /**
@@ -34,12 +34,20 @@ app.use(cors());
 
 // enable authentication
 app.use(passport.initialize());
-// passport.use('jwt', strategies.jwt);
-// passport.use('facebook', strategies.facebook);
-// passport.use('google', strategies.google);
+passport.use('jwt', strategies.jwt);
+passport.use('facebook', strategies.facebook);
+passport.use('google', strategies.google);
 
-// mount api v1 routes
-// app.use('/v1', routes);
+// mount api api routes
+app.use('/api', routes);
+
+app.use((req, res, next) => {
+  res.statusCode = 404;
+  res.setHeader('Content-Type', 'text/html');
+  res.end(
+    '<html><body style="font-family: \'Helvetica\' ">This page doesn`t exist</body></html>',
+  );
+});
 
 // if error is not an instanceOf APIError, convert it.
 // app.use(error.converter);
