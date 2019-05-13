@@ -10,8 +10,6 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'react/prefer-stateless-function': 'off',
-    'react/no-danger': 'off',
     'import/no-extraneous-dependencies': 'off',
   },
 };

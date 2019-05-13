@@ -3,7 +3,7 @@ const BearerStrategy = require('passport-http-bearer');
 const { ExtractJwt } = require('passport-jwt');
 const { jwtSecret } = require('./vars');
 const User = require('../api/models/user.model');
-// const authProviders = require('../api/services/authProviders');
+const authProviders = require('../api/services/authProviders');
 
 const jwtOptions = {
   secretOrKey: jwtSecret,
@@ -20,16 +20,16 @@ const jwt = async (payload, done) => {
   }
 };
 
-// const oAuth = service => async (token, done) => {
-//   try {
-//     const userData = await authProviders[service](token);
-//     const user = await User.oAuthLogin(userData);
-//     return done(null, user);
-//   } catch (err) {
-//     return done(err);
-//   }
-// };
+const oAuth = service => async (token, done) => {
+  try {
+    const userData = await authProviders[service](token);
+    const user = await User.oAuthLogin(userData);
+    return done(null, user);
+  } catch (err) {
+    return done(err);
+  }
+};
 
 exports.jwt = new JwtStrategy(jwtOptions, jwt);
-// exports.facebook = new BearerStrategy(oAuth('facebook'));
-// exports.google = new BearerStrategy(oAuth('google'));
+exports.facebook = new BearerStrategy(oAuth('facebook'));
+exports.google = new BearerStrategy(oAuth('google'));

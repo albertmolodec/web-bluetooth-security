@@ -5,10 +5,10 @@ const compress = require('compression');
 const cors = require('cors');
 const helmet = require('helmet');
 const passport = require('passport');
-// const strategies = require('./passport');
+const strategies = require('./passport');
 const { logs } = require('./vars');
 const routes = require('../api/routes/');
-// const error = require('../api/middlewares/error');
+const error = require('../api/middlewares/error');
 
 /**
  * Express instance
@@ -47,15 +47,16 @@ app.use((req, res, next) => {
   res.end(
     '<html><body style="font-family: \'Helvetica\' ">This page doesn`t exist</body></html>',
   );
+  next();
 });
 
 // if error is not an instanceOf APIError, convert it.
-// app.use(error.converter);
+app.use(error.converter);
 
 // catch 404 and forward to error handler
-// app.use(error.notFound);
+app.use(error.notFound);
 
 // error handler, send stacktrace only during development
-// app.use(error.handler);
+app.use(error.handler);
 
 module.exports = app;
