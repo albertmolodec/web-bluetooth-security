@@ -12,6 +12,7 @@
     "build": "parcel build ./public/index.html"
   },
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
