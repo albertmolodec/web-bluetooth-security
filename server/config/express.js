@@ -38,17 +38,8 @@ passport.use('jwt', strategies.jwt);
 passport.use('facebook', strategies.facebook);
 passport.use('google', strategies.google);
 
-// mount api api routes
+// mount api routes
 app.use('/api', routes);
-
-app.use((req, res, next) => {
-  res.statusCode = 404;
-  res.setHeader('Content-Type', 'text/html');
-  res.end(
-    '<html><body style="font-family: \'Helvetica\' ">This page doesn`t exist</body></html>',
-  );
-  next();
-});
 
 // if error is not an instanceOf APIError, convert it.
 app.use(error.converter);
