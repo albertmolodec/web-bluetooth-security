@@ -4,7 +4,7 @@ import Layout from './_layout';
 
 function Index() {
   return (
-    <Layout>
+    <Layout title="Панель управления">
       <Dashboard />
     </Layout>
   );

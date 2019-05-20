@@ -1,1 +1,1 @@
-# Server- and Clientside of my graduation work about Web Bluetooth Security
+# Дипломная работа по безопасности веб-приложения с Web Bluetooth
