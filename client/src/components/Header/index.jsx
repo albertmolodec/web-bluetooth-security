@@ -20,7 +20,7 @@ function Header() {
         <Link href="/login">
           <a>Войти</a>
         </Link>
-        {' | '}|
+        {' | '}
         <Link href="/register">
           <a>Регистрация</a>
         </Link>

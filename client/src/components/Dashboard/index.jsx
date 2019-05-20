@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import Bulb from '../Bulb';
-import Api from '../../api';
+import Api from '../../api/auth';
 
 import './index.css';
 
