@@ -16,6 +16,9 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
   },
+  button: {
+    margin: theme.spacing.unit,
+  },
 });
 
 function Login({ classes }) {
@@ -44,7 +47,9 @@ function Login({ classes }) {
 
   return (
     <Layout title="Войти">
-      <div>Зарегистрироваться</div>
+      <div>
+        <b>Войти</b>
+      </div>
       <NoSsr>
         <form
           className={classes.container}
@@ -77,7 +82,7 @@ function Login({ classes }) {
             required
           />
           <Button
-            className={classes.textField}
+            className={classes.button}
             variant="contained"
             color="primary"
             label="Войти"

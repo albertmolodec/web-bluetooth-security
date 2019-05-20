@@ -3,6 +3,8 @@ import Layout from './_layout';
 
 import { withStyles } from '@material-ui/core/styles';
 
+const styles = theme => ({});
+
 function Register() {
   return <Layout title="Зарегистрироваться">Зарегистрироваться</Layout>;
 }

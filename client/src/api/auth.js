@@ -38,7 +38,7 @@ export default class Api {
         }
 
         if (!this.refreshRequest) {
-          this.refreshRequest = this.client.post('/refresh', {
+          this.refreshRequest = this.client.post('/auth/refresh-token', {
             refreshToken: this.refreshToken,
           });
         }
@@ -56,7 +56,10 @@ export default class Api {
   }
 
   async login({ login, password }) {
-    const { data } = await this.client.post('/login', { login, password });
+    const { data } = await this.client.post('/users/login', {
+      login,
+      password,
+    });
     this.token = data.token;
     this.refreshToken = data.refreshToken;
   }
