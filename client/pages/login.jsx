@@ -47,9 +47,6 @@ function Login({ classes }) {
 
   return (
     <Layout title="Войти">
-      <div>
-        <b>Войти</b>
-      </div>
       <NoSsr>
         <form
           className={classes.container}
