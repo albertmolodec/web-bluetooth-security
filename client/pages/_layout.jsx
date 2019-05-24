@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import NoSsr from '@material-ui/core/NoSsr';
 
 import Footer from '../src/components/Footer';
 import Header from '../src/components/Header';
@@ -18,7 +19,9 @@ const Layout = ({ children, title = 'Фронтенд' }) => {
         <header>
           <Header />
         </header>
-        <main>{children}</main>
+        <main>
+          <NoSsr>{children}</NoSsr>
+        </main>
         <footer>
           <Footer />
         </footer>
