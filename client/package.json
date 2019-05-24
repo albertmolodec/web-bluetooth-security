@@ -19,7 +19,8 @@
     "next": "^8.1.0",
     "next-cookies": "^1.1.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "storeon": "^0.8.3"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
