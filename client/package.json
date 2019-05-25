@@ -20,6 +20,9 @@
     "react-router-dom": "^5.0.0",
     "storeon": "^0.8.3"
   },
+  "browserslist": [
+    "since 2017-06"
+  ],
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",

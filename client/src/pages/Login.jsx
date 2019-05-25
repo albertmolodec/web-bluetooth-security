@@ -23,10 +23,6 @@ const styles = theme => ({
 function Login({ classes }) {
   const { dispatch, auth, device } = useStoreon('auth', 'device');
 
-  const handleClick = useCallback(() => {
-    dispatch('auth/login', 'some token');
-  });
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -37,6 +33,8 @@ function Login({ classes }) {
 
   const handleSubmit = event => {
     event.preventDefault();
+    dispatch('auth/login', 'some token');
+    dispatch('auth/getUsers');
   };
 
   return (
@@ -77,7 +75,7 @@ function Login({ classes }) {
         label="Войти"
         type="submit"
       >
-        {loggingIn ? 'Производится вход..' : 'Войти'}
+        Войти
       </Button>
     </form>
   );

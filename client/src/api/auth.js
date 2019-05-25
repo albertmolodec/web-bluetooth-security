@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Cookie from 'js-cookie';
 
 axios.defaults.baseURL = 'http://localhost:3001/api/';
 

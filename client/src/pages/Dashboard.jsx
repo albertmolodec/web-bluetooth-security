@@ -1,8 +1,8 @@
 import React from 'react';
 import Bulb from '../components/Bulb';
 
-function Page404() {
+function Dashboard() {
   return <Bulb />;
 }
 
-export default Page404;
+export default Dashboard;
