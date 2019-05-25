@@ -1,4 +1,6 @@
 import React from 'react';
+import StoreContext from 'storeon/react/context';
+import store from '../src/store';
 import axios from 'axios';
 import cookies from 'next-cookies';
 
@@ -42,7 +44,9 @@ class MyApp extends App {
 
     return (
       <Container>
-        <Component {...pageProps} />
+        <StoreContext.Provider value={store}>
+          <Component {...pageProps} />
+        </StoreContext.Provider>
       </Container>
     );
   }

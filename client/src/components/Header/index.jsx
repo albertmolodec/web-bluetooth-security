@@ -1,7 +1,7 @@
 import React from 'react';
-import Link from 'next/link';
+import { NavLink } from 'react-router-dom';
 
-import './index.css';
+import './styles.css';
 
 function Header() {
   return (
@@ -13,17 +13,17 @@ function Header() {
         </span>
       </div>
       <nav>
-        <Link href="/">
-          <a>Панель управления</a>
-        </Link>
+        <NavLink to="/dashboard" activeClassName="selected">
+          Панель управления
+        </NavLink>
         {' | '}
-        <Link href="/login">
-          <a>Войти</a>
-        </Link>
+        <NavLink to="/login" activeClassName="selected">
+          Войти
+        </NavLink>
         {' | '}
-        <Link href="/register">
-          <a>Регистрация</a>
-        </Link>
+        <NavLink to="/register" activeClassName="selected">
+          Регистрация
+        </NavLink>
       </nav>
     </>
   );

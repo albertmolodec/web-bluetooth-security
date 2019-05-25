@@ -8,18 +8,16 @@
   "homepage": "http://albertmolodec.github.io/web-bluetooth-security",
   "author": "Albert Abdulmanov",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "dev": "parcel ./public/index.html -p 3000",
+    "build": "parcel build ./public/index.html"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.3",
-    "@zeit/next-css": "^1.0.1",
     "axios": "^0.18.0",
-    "next": "^8.1.0",
-    "next-cookies": "^1.1.2",
+    "js-cookie": "^2.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
     "storeon": "^0.8.3"
   },
   "devDependencies": {
