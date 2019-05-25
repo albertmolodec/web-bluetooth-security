@@ -6,13 +6,13 @@ axios.defaults.baseURL = 'http://localhost:3001/api/';
 export default class Api {
   constructor(options = {}) {
     this.client = options.client || axios.create();
-    this.token = options.token;
+    this.accessToken = options.accessToken;
     this.refreshToken = options.refreshToken;
     this.refreshRequest = null;
 
     this.client.interceptors.request.use(
       config => {
-        if (!this.token) {
+        if (!this.accessToken) {
           return config;
         }
 
@@ -21,7 +21,7 @@ export default class Api {
           ...config,
         };
 
-        newConfig.headers.Authorization = `Bearer ${this.token}`;
+        newConfig.headers.Authorization = `Bearer ${this.accessToken}`;
         return newConfig;
       },
       e => Promise.reject(e),
@@ -44,7 +44,7 @@ export default class Api {
           });
         }
         const { data } = await this.refreshRequest;
-        this.token = data.token;
+        this.accessToken = data.accessToken;
         this.refreshToken = data.refreshToken;
         const newRequest = {
           ...error.config,
@@ -56,17 +56,19 @@ export default class Api {
     );
   }
 
-  async login({ login, password }) {
-    const { data } = await this.client.post('/users/login', {
-      login,
+  async login({ email, password }) {
+    const { data } = await this.client.post('/auth/login', {
+      email,
       password,
     });
-    this.token = data.token;
-    this.refreshToken = data.refreshToken;
+    return {
+      accessToken: data.token.accessToken,
+      refreshToken: data.token.refreshToken,
+    };
   }
 
   logout() {
-    this.token = null;
+    this.accessToken = null;
     this.refreshToken = null;
   }
 

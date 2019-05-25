@@ -33,8 +33,7 @@ function Login({ classes }) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch('auth/login', 'some token');
-    dispatch('auth/getUsers');
+    dispatch('auth/login', { email, password });
   };
 
   return (
