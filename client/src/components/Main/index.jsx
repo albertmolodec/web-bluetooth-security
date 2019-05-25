@@ -5,7 +5,7 @@ import Header from '../Header';
 
 import './styles.css';
 
-const Layout = ({ children }) => {
+const Main = ({ children }) => {
   return (
     <>
       <div className="app">
@@ -21,4 +21,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default Main;

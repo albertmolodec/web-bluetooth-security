@@ -1,12 +1,12 @@
 import React from 'react';
-import Layout from './_layout';
+import Main from './_layout';
 
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({});
 
 function Register() {
-  return <Layout title="Зарегистрироваться">Зарегистрироваться</Layout>;
+  return <Main title="Зарегистрироваться">Зарегистрироваться</Main>;
 }
 
 export default withStyles(styles)(Register);

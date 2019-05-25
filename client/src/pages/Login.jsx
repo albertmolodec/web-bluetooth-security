@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import useStoreon from 'storeon/react';
 
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -20,9 +21,14 @@ const styles = theme => ({
 });
 
 function Login({ classes }) {
+  const { dispatch, auth, device } = useStoreon('auth', 'device');
+
+  const handleClick = useCallback(() => {
+    dispatch('auth/login', 'some token');
+  });
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loggingIn, setLogging] = useState(false);
 
   const handleChange = name => event => {
     if (name === 'email') setEmail(event.target.value);
@@ -31,17 +37,7 @@ function Login({ classes }) {
 
   const handleSubmit = event => {
     event.preventDefault();
-
-    if (!loggingIn) {
-      setLogging(true);
-
-      setTimeout(() => {
-        setLogging(false);
-      }, 3000);
-    }
   };
-
-  console.log(email, password);
 
   return (
     <form

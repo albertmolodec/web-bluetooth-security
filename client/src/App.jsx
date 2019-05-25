@@ -15,14 +15,14 @@ import Register from './pages/Register';
 import NoMatch from './pages/Page404';
 
 // Components
-import Layout from './components/Layout';
+import Main from './components/Main';
 import PrivateRoute from './components/PrivateRoute';
 
 function AppRouter() {
   return (
     <StoreContext.Provider value={store}>
       <Router>
-        <Layout>
+        <Main>
           <Switch>
             <Redirect from="/" exact to="/dashboard" />
             <Route path="/login" exact component={Login} />
@@ -30,7 +30,7 @@ function AppRouter() {
             <PrivateRoute path="/dashboard" exact component={Dashboard} />
             <Route component={NoMatch} />
           </Switch>
-        </Layout>
+        </Main>
       </Router>
     </StoreContext.Provider>
   );

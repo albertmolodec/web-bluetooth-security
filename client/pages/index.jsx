@@ -1,12 +1,12 @@
 import React from 'react';
 import Dashboard from '../src/components/Dashboard';
-import Layout from './_layout';
+import Main from './_layout';
 
 function Index() {
   return (
-    <Layout title="Панель управления">
+    <Main title="Панель управления">
       <Dashboard />
-    </Layout>
+    </Main>
   );
 }
 

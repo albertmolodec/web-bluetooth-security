@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Layout from './_layout';
+import Main from './_layout';
 
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -45,7 +45,7 @@ function Login({ classes }) {
   console.log(email, password);
 
   return (
-    <Layout title="Войти">
+    <Main title="Войти">
       <form
         className={classes.container}
         noValidate
@@ -86,7 +86,7 @@ function Login({ classes }) {
           {loggingIn ? 'Производится вход..' : 'Войти'}
         </Button>
       </form>
-    </Layout>
+    </Main>
   );
 }
 
