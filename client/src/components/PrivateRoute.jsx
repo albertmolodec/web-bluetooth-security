@@ -4,7 +4,6 @@ import { Route, Redirect } from 'react-router-dom';
 
 function PrivateRoute({ component: Component, ...rest }) {
   const { auth } = useStoreon('auth');
-  console.log(auth.isAuthenticated);
 
   return (
     <Route
