@@ -8,8 +8,8 @@
   "homepage": "http://albertmolodec.github.io/web-bluetooth-security",
   "author": "Albert Abdulmanov",
   "scripts": {
-    "dev": "parcel ./public/index.html -p 3000",
-    "build": "parcel build ./public/index.html"
+    "dev": "parcel src/index.html -p 3000",
+    "build": "parcel build src/index.html --public-url ./"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.3",
@@ -21,9 +21,13 @@
     "storeon": "^0.8.3"
   },
   "browserslist": [
-    "since 2017-06"
+    "Chrome >= 56",
+    "ChromeAndroid >= 74",
+    "Opera >= 43",
+    "Edge >= 75"
   ],
   "devDependencies": {
+    "cssnano": "^4.1.10",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.3.0",
