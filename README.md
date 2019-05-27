@@ -3,7 +3,7 @@
 ## Client
 
 - **Storeon** as a State Management Library
-- **Next** as a SSR Framework
+- **js-cookie** for the cookie management
 - **MaterialUI** as a UI Library
 - **Axios** as a HTTP Client
 - **React** as a library for bulding User Interface
