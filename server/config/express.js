@@ -30,7 +30,24 @@ app.use(compress());
 app.use(helmet());
 
 // enable CORS - Cross Origin Resource Sharing
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+const whiteList = [
+  'http://localhost:3000',
+  'https://albertmolodec.github.com/web-bluetooth-security',
+];
+app.use(
+  cors({
+    origin: function(origin, callback) {
+      if (!origin) return callback(null, true);
+      if (whiteList.indexOf(origin) === -1) {
+        const msg =
+          'Политика CORS для этого сайта не разрешает доступ из указанного источника.';
+        return callback(new Error(msg), false);
+      }
+      return callback(null, true);
+    },
+    credentials: true,
+  }),
+);
 
 // enable authentication
 app.use(passport.initialize());
