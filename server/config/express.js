@@ -32,7 +32,7 @@ app.use(helmet());
 // enable CORS - Cross Origin Resource Sharing
 const whiteList = [
   'http://localhost:3000',
-  'https://albertmolodec.github.com/web-bluetooth-security',
+  'https://albertmolodec.github.io/web-bluetooth-security',
 ];
 app.use(
   cors({
